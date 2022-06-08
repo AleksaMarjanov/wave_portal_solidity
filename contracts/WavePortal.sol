@@ -7,13 +7,37 @@ import "hardhat/console.sol";
 contract WavePortal {
     uint256 totalWaves;
 
-    constructor() {
-        console.log("I am the smart contract");
+    event NewWave(address indexed from, uint256 timestamp, string message);
+
+    // A struct is a custom data type where we customize what we want to hold inside of it
+    struct Wave {
+        address waver; // The address of the user who waved
+        string message; // The message the user sent
+        uint256 timestamp; // The timestamp when the user waved
     }
 
-    function wave() public {
+    // variable waves that will store an array of struct
+    Wave[] waves;
+
+    constructor() {
+        console.log("I AM SMART CONTRACT.");
+    }
+
+    // requires string called _message, message that users sends to us from the frontend!
+    function wave(string memory _message) public {
         totalWaves += 1;
         console.log("%s has waved", msg.sender);
+
+        // Store the wave data in the array
+        waves.push(Wave(msg.sender, _message, block.timestamp));
+
+        // emit triggers the event
+        emit NewWave(msg.sender, block.timestamp, _message);
+    }
+
+    // function that will return struct array, waves, to us.
+    function getAllWaves() public view returns (Wave[] memory) {
+        return waves;
     }
 
     function getTotalWaves() public view returns (uint256) {
