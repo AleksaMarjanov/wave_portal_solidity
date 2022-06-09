@@ -26,17 +26,17 @@
   justify-content: center;
   align-content: center;
   align-items: center;
+  background-color: rgb(230, 192, 0);
 }
 
 .waveButton:hover {
   transform: translateY(-4px);
-  background-color: aqua;
 }
 
 .about-wrapper {
   justify-content: center;
   align-items: center;
-  color: #000;
+  color: #eee;
 
   .header {
     margin-top: 20px;
@@ -44,8 +44,9 @@
     flex-direction: row;
     text-align: center;
     justify-content: center;
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 600;
+    color: #eee;
   }
 
   .bio {
@@ -53,8 +54,7 @@
     flex-direction: row;
     text-align: center;
     justify-content: center;
-    font-size: 18px;
-    color: black;
+    font-size: 25px;
     margin-top: 16px;
   }
 }
@@ -71,4 +71,10 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.logo {
+  width: 60px;
+  border-radius: 50px;
+  margin-right: 15px;
 }

@@ -8,7 +8,14 @@ const Header = () => {
     <div className="navbar-wrapper">
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="/">Wave Portal</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img
+              className="logo"
+              src="https://pbs.twimg.com/profile_images/1510700341951561729/AIrTjju1_400x400.jpg"
+              alt="logo picutre"
+            />
+            WavePortal
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

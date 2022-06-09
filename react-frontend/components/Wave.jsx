@@ -230,7 +230,7 @@ export default function Wave() {
           {!currentAccount && (
             <>
               <Button
-                variant="success"
+                variant="warning"
                 className="waveButton"
                 onClick={connectWallet}
               >
