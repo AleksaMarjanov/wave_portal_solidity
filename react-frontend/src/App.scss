@@ -1,0 +1,74 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 64px;
+
+  .dataContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+
+    h2 {
+      color: whitesmoke;
+    }
+  }
+}
+
+.waveButton {
+  cursor: pointer;
+  margin-top: 16px;
+  padding: 8px;
+  border: 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.waveButton:hover {
+  transform: translateY(-4px);
+  background-color: aqua;
+}
+
+.about-wrapper {
+  justify-content: center;
+  align-items: center;
+  color: #000;
+
+  .header {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .bio {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    font-size: 18px;
+    color: black;
+    margin-top: 16px;
+  }
+}
+
+label {
+  color: whitesmoke;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+input {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
