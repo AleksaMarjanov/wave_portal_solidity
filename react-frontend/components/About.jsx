@@ -4,10 +4,12 @@ const About = () => {
   return (
     <>
       <div className="about-wrapper">
-        <div className="header">👋 Hey there!</div>
         <div className="bio">
-          I am Aleksa Front End Developer, really passionate about Web 3 Space!
-          Connect your Ethereum wallet and wave at me!
+          <p>I am Aleksa passionate front end developer</p>
+          <br />
+        </div>
+        <div className="bio">
+          <p>New technologies really excite me and want to explore Web 3!</p>
         </div>
       </div>
     </>

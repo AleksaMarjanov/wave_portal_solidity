@@ -207,7 +207,8 @@ export default function Wave() {
     <>
       <div className="mainContainer">
         <div className="dataContainer">
-          <h2>Wave at Me</h2>
+          <div className="header">👋 Hey there!</div>
+          <h2>Connect your Ethereum wallet and wave at me!</h2>
           {currentAccount && (
             <form onSubmit={handleSubmit}>
               <label>Message:</label>
