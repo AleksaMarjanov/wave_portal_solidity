@@ -18,6 +18,9 @@
     "hardhat": "^2.9.7"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.8.3",
     "animate.css": "^4.1.1",
     "dotenv": "^16.0.1",
     "loaders": "^1.1.3"

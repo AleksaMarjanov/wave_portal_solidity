@@ -218,6 +218,7 @@ export default function Wave() {
                   onChange={handleChange}
                   rows={10}
                   cols={60}
+                  placeholder="Type anything that you want here :)"
                 />
                 <input
                   type="submit"
