@@ -12,7 +12,7 @@ export default function Wave() {
   /**
    * Create a variable here that holds the contract address after you deploy!
    */
-  const contractAddress = "0xC6a01bA22b8Ee9e51ddBd753e78303AF1Df37CB7";
+  const contractAddress = "0x3fe4756145Bf47f66D04fb9EdCe8436040433517";
 
   const contractABI = wavePortal.abi;
 
@@ -244,12 +244,12 @@ export default function Wave() {
           {allWaves.map((wave, index) => {
             return (
               <div
-                key={index}
                 style={{
                   backgroundColor: "OldLace",
                   marginTop: "16px",
                   padding: "8px",
                 }}
+                key={index}
               >
                 <div>Address: {wave.address}</div>
                 <div>Time: {wave.timestamp.toString()}</div>
