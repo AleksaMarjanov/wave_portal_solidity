@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import wavePortal from "../utils/WavePortal.json";
 import { Button } from "react-bootstrap";
+import { PingPongLoader } from "react-loaders-kit";
 
 export default function Wave() {
   const [currentAccount, setCurrentAccount] = useState("");
+  const [loading, setLoading] = useState(false);
   const [messageText, setMessageText] = useState("");
   // const [loading, setLoading] = useState("");
   // storing all the waves
@@ -15,6 +17,20 @@ export default function Wave() {
   const contractAddress = "0x3fe4756145Bf47f66D04fb9EdCe8436040433517";
 
   const contractABI = wavePortal.abi;
+
+  const loaderProps = {
+    loading: true,
+    size: 275,
+    duartion: 2,
+    colors: ["#99fffe", "#f42e00", "#042549"],
+  };
+
+  useEffect(() => {
+    let timer = setTimeout(() => setLoading(true), 2000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   // method that gets all the waves from contract
   const getAllWaves = async () => {
@@ -34,15 +50,13 @@ export default function Wave() {
         const waves = await wavePortalContract.getAllWaves();
 
         //  We only need address, timestamp, and message in our UI
-        let wavesCleaned = [];
-        waves.forEach((wave) => {
-          wavesCleaned.push({
+        const wavesCleaned = waves.map((wave) => {
+          return {
             address: wave.waver,
             timestamp: new Date(wave.timestamp * 1000),
             message: wave.message,
-          });
+          };
         });
-
         /*
          * Store our data in React State
          */
@@ -132,12 +146,11 @@ export default function Wave() {
           gasLimit: 300000,
         });
         console.log("Mining...", waveTxn.hash);
-        //  setLoading(true);
+        setLoading(true);
 
         await waveTxn.wait();
         console.log("Mined -- ", waveTxn.hash);
-
-        // setLoading(false);
+        setLoading(false);
 
         count = await wavePortalContract.getTotalWaves();
         console.log("Retrieved total wave count...", count.toNumber());
@@ -203,6 +216,8 @@ export default function Wave() {
     };
   }, []);
 
+  // adding loader
+
   return (
     <>
       <div className="mainContainer">
@@ -240,13 +255,18 @@ export default function Wave() {
               </Button>
             </>
           )}
-
+          {/* {setLoading === "true" ? (
+            <PingPongLoader {...loaderProps} />
+          ) : (
+            <h2>Succesfully Mined</h2>
+          )} */}
           {allWaves.map((wave, index) => {
             return (
               <div
                 style={{
                   backgroundColor: "OldLace",
                   marginTop: "16px",
+
                   padding: "8px",
                 }}
                 key={index}
