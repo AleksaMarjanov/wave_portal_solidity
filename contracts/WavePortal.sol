@@ -19,8 +19,8 @@ contract WavePortal {
     // variable waves that will store an array of struct
     Wave[] waves;
 
-    constructor() {
-        console.log("I AM SMART CONTRACT.");
+    constructor() payable {
+        console.log("We have been constructed");
     }
 
     // requires string called _message, message that users sends to us from the frontend!
