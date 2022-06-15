@@ -1,4 +1,4 @@
-<img src='' width="800px"/>
+<img src='https://i.ibb.co/270LqZN/waveportal.png' width="800px"/>
 
 ## Wave Portal is a DApp or Decentralized App which lets users message and wave at a you on the blockchain 👋
 <b>Usage:</b>Users have to connect their blockchain wallet with the project with the help of "Connect Wallet" button and then they can click the Submit button to send  message on the blockchain. The messgae will be visible alongwith the wallet address and message time <br>
